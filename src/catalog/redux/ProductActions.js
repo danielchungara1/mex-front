@@ -1,5 +1,5 @@
 import {
-  getAll
+  getPage
 } from '../ProductApiCalls';
 import {
   PRODUCT_LIST_FAIL,
@@ -7,13 +7,13 @@ import {
 } from './ProductConstants';
 
 
-export const listProductsAction = () => async (dispatch) => {
+export const listProductsAction = (_page = 1) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST });
-    const products = await getAll();
+    const page = await getPage(_page);
     dispatch({
       type: PRODUCT_LIST_SUCCESS,
-      payload: products,
+      payload: page,
     });
   } catch (error) {
     dispatch({

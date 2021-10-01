@@ -2,12 +2,12 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import {
-  productListReducer
+  productPageReducer
 } from './catalog/redux/ProductReducers';
 
 
 const appReducer = combineReducers({
-  productList: productListReducer,
+  productPage: productPageReducer,
 });
 
 // const userInfoFromStorage = localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')) : null;
