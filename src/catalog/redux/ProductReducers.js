@@ -3,7 +3,12 @@ import {
   PRODUCT_LIST_SUCCESS
 } from './ProductConstants';
 
-export const productPageReducer = (state = {}, action) => {
+export const productPageDefault = {
+  page: 1,
+  totalDocs: 0,
+  limit : 10
+}
+export const productPageReducer = (state = productPageDefault, action) => {
   switch (action.type) {
     case PRODUCT_LIST_REQUEST:
       return { ...state, loading: true };

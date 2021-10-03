@@ -10,7 +10,7 @@ import {
 export const listProductsAction = (queryParams = {}) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST });
-    const page = await getPage(queryParams);
+      const page = await getPage(queryParams);
     dispatch({
       type: PRODUCT_LIST_SUCCESS,
       payload: page,
