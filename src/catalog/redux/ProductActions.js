@@ -7,10 +7,10 @@ import {
 } from './ProductConstants';
 
 
-export const listProductsAction = (_page = 1) => async (dispatch) => {
+export const listProductsAction = (queryParams = {}) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST });
-    const page = await getPage(_page);
+    const page = await getPage(queryParams);
     dispatch({
       type: PRODUCT_LIST_SUCCESS,
       payload: page,
