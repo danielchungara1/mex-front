@@ -2,19 +2,22 @@ import { Pagination } from 'antd';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProductsAction } from '../redux/ProductActions';
-import { productPageDefault } from '../redux/ProductReducers';
+import { productListDefault } from '../redux/ProductReducers';
 
 function ProductPager() {
 
-    const page = useSelector(state => state.productPage.page)
+    const {result, filters} = useSelector(state => state.productList)
     const dispatch = useDispatch();
 
-    const currentPage = page.page || productPageDefault.page;
-    const totalElements = page.totalDocs || productPageDefault.totalDocs;
-    const pageSize = page.limit || productPageDefault.limit;
+    const currentPage = result.page || productListDefault.result.page;
+    const totalElements = result.totalDocs || productListDefault.result.totalDocs;
+    const pageSize = result.limit || productListDefault.result.limit;
 
-    const handlePageChange = (_page) => {
-        dispatch(listProductsAction({ page: _page }));
+    const handlePageChange = (page) => {        
+        dispatch(listProductsAction({
+            ...filters || productListDefault.filters, 
+            page
+        }));
     }
 
     return (

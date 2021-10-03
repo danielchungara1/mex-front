@@ -2,16 +2,20 @@ import { Input } from 'antd';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProductsAction } from '../redux/ProductActions';
+import { productListDefault } from '../redux/ProductReducers';
 
 function ProductSearch() {
 
     const { Search } = Input;
 
     const dispatch = useDispatch();
-    const loading = useSelector(state => state.productPage.loading);
+    const loading = useSelector(state => state.productList.loading);
 
     const handleSearch = (e) => {
-        dispatch(listProductsAction({searchText: e.target.value}));
+        dispatch(listProductsAction({ 
+            ...productListDefault.filters,
+            searchText: e.target.value
+        }));
     }
     
     return (

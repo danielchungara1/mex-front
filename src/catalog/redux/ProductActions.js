@@ -7,13 +7,14 @@ import {
 } from './ProductConstants';
 
 
-export const listProductsAction = (queryParams = {}) => async (dispatch) => {
+export const listProductsAction = (filters = {}) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST });
-      const page = await getPage(queryParams);
+    const result = await getPage(filters);    
     dispatch({
       type: PRODUCT_LIST_SUCCESS,
-      payload: page,
+      payload: result,
+      filters
     });
   } catch (error) {
     dispatch({

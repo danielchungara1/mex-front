@@ -2,16 +2,16 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import {
-  productPageDefault,
-  productPageReducer
+  productListDefault,
+  productListReducer
 } from './catalog/redux/ProductReducers';
 
 const appReducer = combineReducers({
-  productPage: productPageReducer,
+  productList: productListReducer,
 });
 
 const initialState = {
-  productPage: productPageDefault
+  productList: productListDefault
 };
 
 const rootReducer = (state, action) => {

@@ -5,8 +5,9 @@ import uuid from 'react-uuid';
 import ProductCard from './ProductCard';
 const ProductGrid = () => {
 
-    const page  = useSelector(state => state.productPage.page)
-    const products = page ? page.docs : [];
+    const {result}  = useSelector(state => state.productList)
+    
+    const products = result ? result.docs : [];
     
     return (
         <Row>

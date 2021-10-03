@@ -5,13 +5,15 @@ import ProductGrid from '../components/ProductGrid';
 import ProductPager from '../components/ProductPager';
 import ProductSearch from '../components/ProductSearch';
 import { listProductsAction } from '../redux/ProductActions';
+import { productListDefault } from '../redux/ProductReducers';
 
 function ProductCatalog() {
 
     const dispatch = useDispatch();
+    
 
     useEffect(() => {
-        dispatch(listProductsAction());
+        dispatch(listProductsAction(productListDefault.filters));
     }, [dispatch])
 
     return (
