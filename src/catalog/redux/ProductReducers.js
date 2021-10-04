@@ -13,7 +13,9 @@ export const productListDefault = {
     sort: 'description,ASC',
     page: 1,
     searchText: '',
-    available: false
+    available: false,
+    minPrice: '',
+    maxPrice: ''
   },
   loading: false
 }
