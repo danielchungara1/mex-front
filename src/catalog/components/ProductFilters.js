@@ -18,20 +18,25 @@ function ProductFilters() {
     }
 
     return (
-        <div>
-            <h3>ProductFilters</h3>
-            <Space direction="horizontal" wrap>
 
-                <AvailabilityFilter />
+        <Space direction="horizontal" wrap>
 
-                <PriceFilter />
+            <AvailabilityFilter />
 
-                <SortFilter />
+            <PriceFilter />
 
-                <Button type="primary" onClick={handleReset}>Reset</Button>
+            <SortFilter />
 
-            </Space>
-        </div>
+            <Button
+                type="primary"
+                onClick={handleReset}
+                size={'large'}
+            >
+                Reset
+            </Button>
+
+        </Space>
+
     )
 }
 

@@ -31,32 +31,34 @@ function PriceFilter() {
     const [valueMaxPrice, setValueMaxPrice] = useFilter(maxPrice);
 
     return (
-        <>
-            <Space direction="horizontal" wrap>
-                <div>
-                    <span>Min </span>
-                    <InputNumber
-                        name='minPrice'
-                        onPressEnter={handlePriceChange}
-                        onBlur={(e)=> {e.target.value && handlePriceChange(e)}}
-                        value={valueMinPrice}
-                        onChange={setValueMinPrice}
-                        style={{minWidth:'150px'}}
-                    />
-                </div>
-                <div>
-                    <span>Max </span>
-                    <InputNumber
-                        name='maxPrice'
-                        onPressEnter={handlePriceChange}
-                        onBlur={(e)=> {e.target.value && handlePriceChange(e)}}
-                        value={valueMaxPrice}
-                        onChange={setValueMaxPrice}
-                        style={{minWidth:'150px'}}
-                    />
-                </div>
-            </Space>
-        </>
+
+        <Space direction="horizontal" wrap>
+            <div>
+                <span>Min </span>
+                <InputNumber
+                    name='minPrice'
+                    onPressEnter={handlePriceChange}
+                    onBlur={(e) => { e.target.value && handlePriceChange(e) }}
+                    value={valueMinPrice}
+                    onChange={setValueMinPrice}
+                    style={{ minWidth: '150px' }}
+                    size={'large'}
+                />
+            </div>
+            <div>
+                <span>Max </span>
+                <InputNumber
+                    name='maxPrice'
+                    onPressEnter={handlePriceChange}
+                    onBlur={(e) => { e.target.value && handlePriceChange(e) }}
+                    value={valueMaxPrice}
+                    onChange={setValueMaxPrice}
+                    style={{ minWidth: '150px' }}
+                    size={'large'}
+                />
+            </div>
+        </Space>
+
     )
 }
 

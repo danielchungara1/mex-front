@@ -45,17 +45,15 @@ function SortFilter() {
     );
 
     return (
-        <div>
-            <Space direction="horizontal" wrap>
+        <Space direction="horizontal" wrap>
 
-                <Dropdown overlay={menu} trigger={['click']}>
-                    <Button>
-                        {`${value}`} <DownOutlined />
-                    </Button>
-                </Dropdown>
+            <Dropdown overlay={menu} trigger={['click']}>
+                <Button size={'large'}>
+                    {`${value}`} <DownOutlined />
+                </Button>
+            </Dropdown>
 
-            </Space>
-        </div>
+        </Space>
     )
 }
 

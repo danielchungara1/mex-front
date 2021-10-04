@@ -1,11 +1,17 @@
 import './App.css';
 import ProductCatalog from './catalog/components/ProductScreen';
+import Header from './common/Header';
+
 
 function App() {
   return (
-    <div className='p-32'>
-      <ProductCatalog />
+    <div>
+      <Header/>
+      <div className='container-app'>
+        <ProductCatalog />
+      </div>
     </div>
+
   );
 }
 

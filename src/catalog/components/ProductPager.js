@@ -21,7 +21,7 @@ function ProductPager() {
     }
 
     return (
-        <>
+        <div>
             { totalElements > 0
                 ?
                     <div className="row-centered">
@@ -29,7 +29,7 @@ function ProductPager() {
                             current={currentPage}
                             total={totalElements}
                             onChange={handlePageChange}
-                            pageSize={pageSize}
+                            pageSize={pageSize}                            
                         />
                     </div>
                 :
@@ -37,7 +37,7 @@ function ProductPager() {
                         No results...
                     </h3>
             }
-        </>
+        </div>
     )
 }
 

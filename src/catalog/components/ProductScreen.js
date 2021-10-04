@@ -10,20 +10,21 @@ import { productListDefault } from '../redux/ProductReducers';
 function ProductCatalog() {
 
     const dispatch = useDispatch();
-    
+
 
     useEffect(() => {
         dispatch(listProductsAction(productListDefault.filters));
     }, [dispatch])
 
     return (
-        <div className='m-6-childs'>
-            <h2>Product Catalog</h2>
+        
+        <div className='m-md-childs'>
             <ProductSearch />
             <ProductFilters />
             <ProductGrid />
             <ProductPager />
         </div>
+
     )
 }
 

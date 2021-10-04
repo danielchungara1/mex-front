@@ -25,17 +25,16 @@ function ProductSearch() {
     const [value, handleValueChange] = useFilter(searchText);
 
     return (
-        <>
-            <Search
-                placeholder="Search in Catalog ...."
-                loading={loading}
-                onPressEnter={(e)=> handleSearch(e.target.value)}
-                onSearch={handleSearch}
-                onBlur={(e)=> {e.target.value && handleSearch(e.target.value)}}
-                value={value}
-                onChange={(e) => handleValueChange(e.target.value)}
-            />
-        </>
+        <Search
+            placeholder="Search in Catalog ...."
+            loading={loading}
+            onPressEnter={(e) => handleSearch(e.target.value)}
+            onSearch={handleSearch}
+            onBlur={(e) => { e.target.value && handleSearch(e.target.value) }}
+            value={value}
+            onChange={(e) => handleValueChange(e.target.value)}
+            size={'large'}
+        />
     )
 }
 

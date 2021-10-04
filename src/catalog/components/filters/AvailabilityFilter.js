@@ -30,7 +30,7 @@ function AvailabilityFilter() {
 
                 <span>Available</span>
                 <Switch
-                    size="small"
+                    size="large"
                     onChange={(e) => { handleChangeAvailability(e); handleValueChange(e) }}
                     checked={value}
                 />

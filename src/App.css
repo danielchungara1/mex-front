@@ -25,11 +25,53 @@
     margin-bottom: 12px;
 }
 
-.m-6-childs > * {
-    margin-top: 6px;
-    margin-bottom: 6px;
+.m-md-childs > * {
+    margin: 16px 0;
 }
 
 .w-100 {
     width: 100%;
+}
+
+.container-app {    
+    margin: 0 auto;
+    padding: 0% 7.5%;
+}
+  
+  @media only screen and (max-width: 480px) {
+    .container-app {
+      padding: 2% 5%;
+    }
+  }
+  
+.ant-card {
+    font-size: 1.1rem;
+}
+.ant-card-meta-title {
+    font-size: 1.25rem;
+}
+
+.ant-btn {
+    height: 40px;
+    padding: 6.4px 15px;
+    font-size: 1.1rem;
+    border-radius: 2px;
+}
+
+.ant-pagination-prev, .ant-pagination-next,
+.ant-pagination-item {
+    height: 50px;
+    width: 50px;
+    font-size: 1.25rem;    
+}
+
+.ant-pagination-item > a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.ant-pagination {
+    margin: 16px 0;
 }

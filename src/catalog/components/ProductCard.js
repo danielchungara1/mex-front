@@ -12,13 +12,12 @@ const ProductCard = ({ product }) => {
 
     const [isModalVisible, showModal, handleOk, handleCancel] = useModal();
 
-    return (
-        <div className="row-centered m-6">
+    return (        
             <Card
                 hoverable
-                onClickCapture={showModal}
-                style={{ width: 240 }}
-                cover={<img alt="example" src={imageUrlMd} />}
+                onClickCapture={showModal}                          
+                style={{ height: '100%'}}
+                cover={<img alt="example" src={imageUrlMd} style={{padding: '5px' }}/>}
             >
                 <Meta
                     title={description}
@@ -27,7 +26,7 @@ const ProductCard = ({ product }) => {
                     value={price}
                     displayType={'text'}
                     prefix={'$'}
-                    style={{ lineHeight: '2rem', fontSize: '0.9rem' }}
+                    style={{ lineHeight: '2rem'}}
                 />
                 {stock > 0
                     ? (<div>Available</div>)
@@ -42,8 +41,7 @@ const ProductCard = ({ product }) => {
                     <ProductDetail product={product} />
                 </Modal>
 
-            </Card>
-        </div>
+            </Card>    
     );
 };
 
