@@ -48,6 +48,8 @@ const ProductCard = ({ product }) => {
                 visible={isModalVisible}
                 onOk={handleOk}
                 onCancel={handleCancel}
+                width="75%"
+
             >
                 <ProductDetail product={product} />
             </Modal>
